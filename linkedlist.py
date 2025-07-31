@@ -1,11 +1,17 @@
 class Node:
     def __init__(self,value):
         self.value = value
-        self.next = None
+        self.Next = None
 
-class Linked_List:
-    def __init__(self,value):
-      new_node = Node(value)
-      self.head = new_node
-      self.tail = new_node
-      self.length = 1
+class LinkedList:
+    def prepend(self,value):
+        new_node = Node(value)
+        if self.length == 0:
+            self.head = new_node
+            self.tail = new_node
+        else:
+            new_node.next = self.head
+            self.head = new_node
+            self.length = +1
+            return True 
+        
