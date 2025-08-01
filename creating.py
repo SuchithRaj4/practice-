@@ -51,6 +51,21 @@ def pop_first(self):
     self.head = self.head.next
     temp.next = None
     self.length = -1
-    return True
+    return True 
+
+    def reverse(self):
+        temp = self.head
+        self.head = self.tail
+        self.tail = temp
+        after = temp.next
+        before = None
+
+        for _ in range(self.length):
+            after = temp.next
+            temp.next = before
+            before = temp 
+            temp = after
+
+
 
     
