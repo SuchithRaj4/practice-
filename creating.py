@@ -66,6 +66,33 @@ def pop_first(self):
             before = temp 
             temp = after
 
-
-
+    def finding_middle_(self):
+        slow = self.head
+        fast = self.head
+        while fast is None and fast.next is not None:
+            slow = slow.next
+            fast = fast.next.next
+            return True
+    def fib(n):
+        fib_list = [0,1]
+        for index in range(2, n+1):
+            next_fiblist = fib_list[index -1] + fiblist[index -2 ]
+            next_fiblist.append(next_fiblist)
+            return n 
+        
+class doublyLinkedList:
+    def __init__(self,value):
+        new_node = Node(value)
+        self.head = new_node
+        self.tail = new_node
+        self.length = -1
+        return True
     
+class append:
+    def __init__(self,value):
+        new_node = Node(value)
+        if self.head is not None:
+            self.head = new_node
+            self.tail = new_node
+            self.tail.next = new_node
+            new_node.prev = self.tail

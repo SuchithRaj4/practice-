@@ -35,7 +35,41 @@ class LinkedList:
        if index == 0:
         return self.prepend(value)
         if index == self.length:
-           
            return self.append(value)
+        
+        new_node = Node(value)
+        temp = temp.self.get(index-1)
+        new_node.next = temp.next
+        temp.next = new_node
+
+    def remove(self,index):
+       if index <0 or index >= self.length:
+          return None 
+       prev = self.get(index -1)
+       temp = prev.next
+       prev.next = temp.next 
+       temp.next = None
+       self.length = -1
+       return True
+    
+    def reverse(self):
+       temp = self.head
+       self.head = self.tail 
+       self.tail = temp
+       after = temp.next
+       before = None
+       for _ in rage(self.length):
+          after = temp.next
+          temp.next = before
+          before = temp
+          temp = after 
 
 
+
+    def middle_node(self):
+       slow = self.head
+       fast = self.head
+       while fast is not None and fast.next is not None:
+          slow = slow.next
+          fast = fast.next.next
+          return slow
