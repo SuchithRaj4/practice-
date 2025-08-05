@@ -73,3 +73,13 @@ class LinkedList:
           slow = slow.next
           fast = fast.next.next
           return slow
+       
+    def pop(self,value):
+       if self.length == 0:
+          return None
+       temp = self.tail
+       self.tail = self.tail.prev
+       self.tail.next = None
+       temp.prev = None
+       self.length = -1
+       return None 

@@ -25,12 +25,35 @@ def pop(self,value):
     if self.length == 0:
         return None
     
-    temp = self.head
+    temp =  self.head
     pre = self.head
+    while(temp.next):
+        pre = temp
+        temp = temp.next
 
-    while (temp.next):
-        pre = temp 
-        temp = temp.next 
-        self.tail = pre
-        self.tail.next = None
 
+def pop(self,value):
+    if self.length == 0:
+        return None 
+    temp = self.tail
+    self.tail = self.prev.next
+    self.tail.next = None
+    temp.prev.next = None
+    self.length = -1
+    return True
+
+def prepend (self,value):
+    if self.length == 0:
+        return None
+    new_node = Node(value)
+    self.head = new_node
+    self.tail = new_node
+    else:
+    new_node.next = self.head
+    self.head.prev = new_node
+    self.head = new_node
+    self.length = -1
+    return True
+    
+
+        

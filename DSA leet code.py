@@ -97,7 +97,7 @@ class append:
             self.tail.next = new_node[]
 
 class doubleLinkedList:
-    def __init__(self,value):
+    def __init__(self,value): 
         new_node = Node(value)
         self.head = new_node
         self.tail = new_node
